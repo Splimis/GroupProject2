@@ -1,0 +1,17 @@
+<h1>Does this work?</h1>
+
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="col s6">
+      <ul>
+ 	 {{#each quote}}
+  		<li>
+  	   	<p>ID: {{this.id}}</p>
+       	<p>quotation: {{this.quotation}}</p>
+  		</li>
+  		{{/each}}
+		</ul>
+      </div>
+
+</main>
