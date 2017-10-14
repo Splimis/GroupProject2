@@ -2,8 +2,19 @@ var express = require('express');
 var router = express.Router();
 var quotations = require('../models/quotations.js');
 
+// router.get('/', function(req, res) {
+//   quotations.selectAll(function(data) {
+//     var hbsObject = {
+//       quote: data
+//     };
+//     // console.log(hbsObject);
+//     res.render('index', hbsObject);
+//     // console.log(res);
+//   });
+// });
+
 router.get('/', function(req, res) {
-  quotations.selectAll(function(data) {
+  quotations.selectRand(function(data) {
     var hbsObject = {
       quote: data
     };
@@ -13,7 +24,7 @@ router.get('/', function(req, res) {
   });
 });
 
-router.post('/quote', function(req, res) {
+router.post('/', function(req, res) {
   quotations.insertOne([
     'quote'
   ], [

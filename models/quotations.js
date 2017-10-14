@@ -7,6 +7,12 @@ var quote = {
     });
   },
 
+  selectRand: function(cb) {
+    orm.selectRand('quote', function(res) {
+      cb(res);
+    });
+  },
+
   insertOne: function(cols, vals, cb) {
     orm.insertOne('quote', cols, vals, function(res) {
       cb(res);
