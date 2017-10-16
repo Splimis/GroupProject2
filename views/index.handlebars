@@ -1,4 +1,4 @@
-<h1>Does this work?</h1>
+<h1>Rick and Morty</h1>
 
 <main>
   <div class="container">
@@ -7,40 +7,33 @@
       <ul>
  	      {{#each quote}}
   		    <li>
-  	   	  <p>ID: {{this.id}}</p>
+  	   	 {{!--  <p>ID: {{this.id}}</p> --}}
          	<p>{{this.quotation}}</p>
   		    </li>
   		  {{/each}}
       </ul>
-      <button type="submit" class="btn btn-primary newquote" name="" id="button" data-id="{{this.id}}">
-    
+      <form>
+      <button type="submit" class="btn btn-primary newquote" name="" id="button">
       <p>Random Quote</p>
-
       </button>
+      </form>
     </div>
+
 
     <h2>Add a Quote</h2>
 
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="char">Character:</label>
-    <input type="text" id="char" name=Character>
+<div class="row">
+  <div class="col s12">
+    <form action="/" method="POST">
+      <input type="text" id="name" name="quotation" placeholder="Do it.">
+      <button type="submit" class="addQuoteButton">Add Quotations</button>
+    </form>
   </div>
-
-  <div class="form-group">
-    <label for="quo">Quote:</label>
-    <textarea id="quo" name="quote" rows="8" cols="40"></textarea>
-  </div>
-
-  <button type="submit">Add Quote</button>
-</form>
-
-  
+</div>
 
 
 {{{ sounds }}}
 
 
-</html>
+
 </main>
