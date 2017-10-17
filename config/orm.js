@@ -43,6 +43,27 @@ var orm = {
 		});
 	},
 
+	selectRick: function(tableInput, cb) {
+		var queryString = "SELECT * FROM " + tableInput + " WHERE CharID = 1;";
+
+		connection.query(queryString, function(err, result) {
+			if (err) {
+				throw err;
+			}
+			cb(result);
+		});
+	},
+
+	selectMort: function(tableInput, cb) {
+		var queryString = "SELECT * FROM " + tableInput + " WHERE CharID = 2;";
+
+		connection.query(queryString, function(err, result) {
+			if (err) {
+				throw err;
+			}
+			cb(result);
+		});
+	},
 
 	insertOne: function(table, cols, vals, cb) {
 		var queryString = "INSERT INTO " + table;
