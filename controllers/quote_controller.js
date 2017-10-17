@@ -42,17 +42,46 @@ router.get('/morty', function(req,res) {
   });
 });
 
-router.post('/', function(req, res) {
-  quotations.insertOne([
-    'quotation'
-  ], [
-    req.body.quotation
-  ], function(data) {
-    res.redirect('/');
+router.get('/jerry', function(req,res) {
+  quotations.selectJerr(function(data) {
+    var hbsObject = {
+      quote: data
+    };
+     res.render('jerry', hbsObject);
   });
 });
 
+router.get('/beth', function(req,res) {
+  quotations.selectBeth(function(data) {
+    var hbsObject = {
+      quote: data
+    };
+     res.render('beth', hbsObject);
+  });
+});
 
+router.get('/admin', function(req,res) {
+  quotations.selectBeth(function(data) {
+    var hbsObject = {
+      quote: data
+    };
+     res.render('admin', hbsObject);
+  });
+});
+
+router.post('/', function(req, res) {
+  quotations.insertOne([
+    'quotation',
+    'CharID',
+    'url'
+  ], [
+    req.body.quotation,
+    req.body.CharID,
+    req.body.url
+  ], function(data) {
+    res.redirect('/admin');
+  });
+});
 
 // router.put('/quotes/:id', function(req, res) {
 //   var condition = 'id = ' + req.params.id;

@@ -25,6 +25,18 @@ var quote = {
     });
   },
 
+  selectJerr: function(cb) {
+    orm.selectJerr('quote', function(res) {
+      cb(res);
+    });
+  },
+
+  selectBeth: function(cb) {
+    orm.selectBeth('quote', function(res) {
+      cb(res);
+    });
+  },
+
   insertOne: function(cols, vals, cb) {
     orm.insertOne('quote', cols, vals, function(res) {
       cb(res);

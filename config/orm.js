@@ -65,6 +65,28 @@ var orm = {
 		});
 	},
 
+	selectJerr: function(tableInput, cb) {
+		var queryString = "SELECT * FROM " + tableInput + " WHERE CharID = 3 ORDER BY RAND() LIMIT 1;";
+
+		connection.query(queryString, function(err, result) {
+			if (err) {
+				throw err;
+			}
+			cb(result);
+		});
+	},
+
+	selectBeth: function(tableInput, cb) {
+		var queryString = "SELECT * FROM " + tableInput + " WHERE CharID = 4 ORDER BY RAND() LIMIT 1;";
+
+		connection.query(queryString, function(err, result) {
+			if (err) {
+				throw err;
+			}
+			cb(result);
+		});
+	},
+
 	insertOne: function(table, cols, vals, cb) {
 		var queryString = "INSERT INTO " + table;
 
