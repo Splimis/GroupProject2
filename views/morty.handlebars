@@ -1,0 +1,16 @@
+<main>
+<div class="col m4">
+    <form action="/" Method="GET">
+      <ul>
+        {{#each quote}}
+          <li>
+          <p>{{this.quotation}}</p>
+          </li>
+        {{/each}}
+      </ul>
+      <button type="submit" class="btn btn-primary newquote" name="" id="button">
+      <p>Morty Quote</p>
+      </button>
+    </form>
+</div>
+</main>

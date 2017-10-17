@@ -44,7 +44,7 @@ var orm = {
 	},
 
 	selectRick: function(tableInput, cb) {
-		var queryString = "SELECT * FROM " + tableInput + " WHERE CharID = 1;";
+		var queryString = "SELECT * FROM " + tableInput + " WHERE CharID = 1 ORDER BY RAND() LIMIT 1;";
 
 		connection.query(queryString, function(err, result) {
 			if (err) {
@@ -55,7 +55,7 @@ var orm = {
 	},
 
 	selectMort: function(tableInput, cb) {
-		var queryString = "SELECT * FROM " + tableInput + " WHERE CharID = 2;";
+		var queryString = "SELECT * FROM " + tableInput + " WHERE CharID = 2 ORDER BY RAND() LIMIT 1;";
 
 		connection.query(queryString, function(err, result) {
 			if (err) {

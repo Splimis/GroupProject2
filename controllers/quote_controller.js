@@ -19,26 +19,26 @@ router.get('/', function(req, res) {
       quote: data
     };
     // console.log(hbsObject);
-    res.render('random', hbsObject);
+    res.render('index', hbsObject);
     // console.log(res);
   });
 });
 
-router.get('/', function(req,res) {
+router.get('/rick', function(req,res) {
   quotations.selectRick(function(data) {
     var hbsObject = {
       quote: data
     };
-     res.render('Rick', hbsObject);
+     res.render('rick', hbsObject);
   });
 });
 
-router.get('/', function(req,res) {
+router.get('/morty', function(req,res) {
   quotations.selectMort(function(data) {
     var hbsObject = {
       quote: data
     };
-     res.render('Morty', hbsObject);
+     res.render('morty', hbsObject);
   });
 });
 
