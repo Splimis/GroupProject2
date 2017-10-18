@@ -27,12 +27,15 @@ INSERT INTO quote (quotation, CharID, url) VALUES ('insert rick and morty quote1
 INSERT INTO quote (quotation, CharID, url) VALUES ('insert rick and morty quote19', 'Jerry', 'url' );
 INSERT INTO quote (quotation, CharID, url) VALUES ('insert rick and morty quote20', 'Jerry', 'url' );
 
-https://soundcloud.com/jose-arancibia-4749278/mortyquote2?in=jose-arancibia-4749278/sets/quote-generator
+                                            https://soundcloud.com/jose-arancibia-4749278/mortyquote2?in=jose-arancibia-4749278/sets/quote-generator
 
 <iframe width="100%" height="166" scrolling="no" frameborder="no"
   src="https://w.soundcloud.com/player/?url=https://soundcloud.com/jose-arancibia-4749278/mortyquote2?in=jose-arancibia-4749278/sets/quote-generator&amp;auto_play=true">
 </iframe>
 
 <iframe width="100%" height="166" scrolling="no" frameborder="no"
-  src="https://w.soundcloud.com/player/?url=https://soundcloud.com/jose-arancibia-4749278/rickquote1?in=jose-arancibia-4749278/sets/quote-generator&amp;auto_play">
+  src="https://w.soundcloud.com/player/?url=https://soundcloud.com/jose-arancibia-4749278/mortyquote1&amp;auto_play=true">
 </iframe>
+
+
+
