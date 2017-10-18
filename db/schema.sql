@@ -1,24 +1,25 @@
-create database quotations;
+CREATE DATABASE quotations;
 
-use quotations; 
+DROP TABLE IF EXISTS quote; 
+
+USE quotations;
 
 CREATE TABLE `quote` (
  id INT NOT NULL AUTO_INCREMENT,
- quotation VARCHAR(50) NOT NULL,
- CharID integer(50) NOT NULL,
+ quotation LONGBLOB NOT NULL,
+ CharID VARCHAR(25) NOT NULL,
+ url VARCHAR(255) NOT NULL,
 
  PRIMARY KEY (id)
 
 );
 
-select * from quote;
+SELECT * FROM quote;
 
-SELECT * FROM quote WHERE CharID = 2;
+SELECT * FROM quote WHERE CharID = Morty;
 
 SELECT * FROM quote
 ORDER BY RAND()
 LIMIT 1;
 
-Delete from quote;
-
-drop table if exists quote; 
+DELETE FROM quote;
