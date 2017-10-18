@@ -21,17 +21,7 @@ function objToSql(ob) {
 }
 
 var orm = {
-	// selectAll: function(tableInput, cb) {
-	// 	var queryString = "SELECT * FROM " + tableInput + ";";
-
-	// 	connection.query(queryString, function(err, result) {
-	// 		if (err) {
-	// 			throw err;
-	// 		}
-	// 		cb(result);
-	// 	});
-	// },
-
+	
 	selectRand: function(tableInput, cb) {
 		var queryString = "SELECT * FROM " + tableInput + " ORDER BY RAND() LIMIT 1;";
 
@@ -66,7 +56,7 @@ var orm = {
 	},
 
 	selectJerr: function(tableInput, cb) {
-		var queryString = "SELECT * FROM " + tableInput + " WHERE CharID = 'Beth' ORDER BY RAND() LIMIT 1;";
+		var queryString = "SELECT * FROM " + tableInput + " WHERE CharID = 'Jerry' ORDER BY RAND() LIMIT 1;";
 
 		connection.query(queryString, function(err, result) {
 			if (err) {
@@ -77,7 +67,7 @@ var orm = {
 	},
 
 	selectBeth: function(tableInput, cb) {
-		var queryString = "SELECT * FROM " + tableInput + " WHERE CharID = 'Jerry' ORDER BY RAND() LIMIT 1;";
+		var queryString = "SELECT * FROM " + tableInput + " WHERE CharID = 'Beth' ORDER BY RAND() LIMIT 1;";
 
 		connection.query(queryString, function(err, result) {
 			if (err) {
@@ -108,24 +98,6 @@ var orm = {
 		});
 	}
 
-	// updateOne: function(table, objColVals, condition, cb) {
-	// 	var queryString = "UPDATE " + table;
-
-	// 	queryString += " SET ";
-	// 	queryString += objToSql(objColVals);
-	// 	queryString += " WHERE ";
-	// 	queryString += condition;
-
-	// 	// console.log(queryString);
-
-	// 	connection.query(queryString, function(err, result) {
-	// 		if (err) {
-	// 			throw err;
-	// 		}
-
-	// 		cb(result);
-	// 	});
-	// }
 };
 
 module.exports = orm;
