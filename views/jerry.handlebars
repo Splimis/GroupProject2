@@ -1,5 +1,70 @@
+ <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent " color-on-scroll="400">
+        <div class="container">
+            <div class="navbar-translate">
+                <a class="navbar-brand" href="/" rel="tooltip" title="Designed by Invision. Coded by Creative Tim" data-placement="bottom" target="_blank">
+                    RICK and MORTY
+                </a>
+                <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-bar bar1"></span>
+                    <span class="navbar-toggler-bar bar2"></span>
+                    <span class="navbar-toggler-bar bar3"></span>
+                </button>
+            </div>
+           <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="./assets/img/blurred-image-1.jpg">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.hulu.com/rick-and-morty" onclick="scrollToDownload()">
+                            <i class="now-ui-icons arrows-1_cloud-download-93"></i>
+                            <p>Hulu</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./documentation/tutorial-components.html" target="_blank">
+                            <i class="now-ui-icons files_paper"></i>
+                            <p>Quote List</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-neutral" href="https://www.creative-tim.com/product/now-ui-kit-pro" target="_blank">
+                            <i class="now-ui-icons arrows-1_share-66"></i>
+                            <p>Fan Page</p>
+                        </a>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End Navbar --> 
+    <div class="wrapper">
+        <div class="page-header clear-filter" filter-color="orange">
+            <div class="page-header-image" data-parallax="true" style="background-image: url('https://images5.alphacoders.com/633/thumb-1920-633216.jpg');">
+            </div>
+            <div class="container">
+                <div class="content-center brand">
+                    <img class="n-logo" src="http://vignette3.wikia.nocookie.net/rickandmorty/images/f/f1/Jerry_Smith.png/revision/latest?cb=20160923151111" alt="">
+                    <h1 class="h1-seo">JERRY</h1>
+                    <h3>Jerry Quote Generator</h3>
+                </div>
+              
+                <h6 class="category category-absolute">Designed by
+                                    Dan, Dev
+                                    . Coded by
+                                    Jose, Ethan
+                </h6>
+                <div class="category category-absolute" style=" position:absolute; top:175px; right: 300px;" >
+                  <a class="btn btn-primary" role="button" href="/rick">RICK</a>
+                  <br>
+                  <a class="btn btn-primary" role="button" href="/morty">MORTY</a>
+                  <a class="btn btn-primary" role="button" href="/beth">BETH</a>
+               
+                </div>
+                                                
+            </div>
+            
+        </div>
+       </div>
 <main>
-<div class="col m4">
+<div class="category category-absolute" style=" position:absolute; top:545px; right: 456px;">
     <form action="/jerry" Method="GET">
       <ul>
         {{#each quote}}
@@ -21,4 +86,5 @@
         </li>
     {{/each}}
 </div>    
-</main>
+
+
