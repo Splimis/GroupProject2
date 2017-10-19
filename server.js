@@ -4,6 +4,8 @@ var bodyParser = require("body-parser");
 var exphbs = require('express-handlebars');
 var passport = require('passport');
 
+console.log("what the fuck");
+
 var app = express();
 var port = process.env.PORT || 3000;
 
