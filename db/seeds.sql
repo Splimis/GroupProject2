@@ -62,3 +62,9 @@ INSERT INTO quote (quotation, CharID, url) VALUES ('Well, I remember feeling tha
   src="https://w.soundcloud.com/player/?url=https://soundcloud.com/jose-arancibia-4749278/jerryquote3&amp;auto_play=true">
 </iframe>' );
 INSERT INTO quote (quotation, CharID, url) VALUES ('I tell ya the galactic federation taking over earth – best thing that’s ever happened for this family! I just got my sixth promotion this week and I still don’t know what I do!', 'Jerry', '<iframe width="0%" height="0" scrolling="no" frameborder="no"
+  src="https://w.soundcloud.com/player/?url=https://soundcloud.com/jose-arancibia-4749278/jerryquote4&amp;auto_play=true">
+</iframe>' );
+INSERT INTO quote (quotation, CharID, url) VALUES ('Things weren’t always so bad between Beth and me. We had some good times when we were younger.
+Rick: Yeah, I bet. That’s how teenage pregnancy works.', 'Jerry', '<iframe width="0%" height="0" scrolling="no" frameborder="no"
+  src="https://w.soundcloud.com/player/?url=https://soundcloud.com/jose-arancibia-4749278/jerryquote5&amp;auto_play=true">
+</iframe>' );
