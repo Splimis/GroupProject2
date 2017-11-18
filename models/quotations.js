@@ -1,11 +1,11 @@
 var orm = require('../config/orm.js');
 
 var quote = {
-  // selectAll: function(cb) {
-  //   orm.selectAll('quote', function(res) {
-  //     cb(res);
-  //   });
-  // },
+  selectAll: function(cb) {
+    orm.selectAll('quote', function(res) {
+      cb(res);
+    });
+  },
 
   selectRand: function(cb) {
     orm.selectRand('quote', function(res) {
