@@ -1,17 +1,18 @@
 {{!-- <h1>Rick and Morty</h1> --}}
 
+    <div class="wrapper">
+        <div class="page-header clear-filter" filter-color="orange">
+            <div class="page-header-image" data-parallax="true" style="background-image: url('http://orig05.deviantart.net/b424/f/2016/258/0/5/rick_and_morty_background_no_4_by_jurokoo-dahrvd7.png');">
+            </div>
+            <div class="container">
+
 <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent " color-on-scroll="400">
+    <nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent" color-on-scroll="400">
         <div class="container">
             <div class="navbar-translate">
                 <a class="navbar-brand" href="/" rel="tooltip" title="" data-placement="bottom" target="_blank">
                 Rick and Morty
                 </a>
-                <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-bar bar1"></span>
-                    <span class="navbar-toggler-bar bar2"></span>
-                    <span class="navbar-toggler-bar bar3"></span>
-                </button>
             </div>
            <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="./assets/img/blurred-image-1.jpg">
                 <ul class="navbar-nav">
@@ -56,56 +57,37 @@
         </div>
     </nav>
     <!-- End Navbar --> 
-    <div class="wrapper">
-        <div class="page-header clear-filter" filter-color="orange">
-            <div class="page-header-image" data-parallax="true" style="background-image: url('http://orig05.deviantart.net/b424/f/2016/258/0/5/rick_and_morty_background_no_4_by_jurokoo-dahrvd7.png');">
-            </div>
-            <div class="container">
-                <div class="content-center brand">
+
+                <div class="content-center brand" style="margin-top:10%;">
                     <img class="n-logo" src="https://ih0.redbubble.net/image.286482680.5792/ap,550x550,16x12,1,transparent,t.png" alt="">
                     <h1 class="h1-seo">Rick and Morty</h1>
                     <h3>Quote Generator and Player</h3>
-                </div>
-              
-                <h6 class="category category-absolute">Designed by
-                                    Dan, Dev
-                                    . Coded by
-                                    Jose, Ethan
-                </h6>
-                <div class="category category-absolute" style=" position:absolute; top:175px; right: 300px;" >
-                  <a class="btn btn-primary" role="button" href="/rick">RICK</a>
-                  <br>
-                  <a class="btn btn-primary" role="button" href="/morty">MORTY</a>
-                  <a class="btn btn-primary" role="button" href="/beth">BETH</a>
-                  <a class="btn btn-primary" role="button" href="/jerry">JERRY</a>
-                </div>
-                
-                                                
-            </div>
-            
-        </div>
-       </div>
-       
-<div class="category category-absolute" id="something" style=" position:absolute; top:545px; right: 456px;">
+
+                    <div class="col-lg-6" style="margin-left:25%;">
+                    <a class="btn btn-primary" role="button" href="/rick">RICK</a>
+                    <a class="btn btn-primary" role="button" href="/morty">MORTY</a>
+                    <a class="btn btn-primary" role="button" href="/beth">BETH</a>
+                    <a class="btn btn-primary" role="button" href="/jerry">JERRY</a>
+                    </div>
+
+<div class="" id="something" >
       <form action="/" Method="GET">
       <ul>
         {{#each quote}}
-          <li>
+
           <p>{{this.quotation}}</p>
-          </li>
+    
         {{/each}}
       </ul>
       
       <button type="submit" class="btn btn-primary newquote" name="" id="button">
-      <p>Random Quote</p>
+      Random Quote
       </button>
       </form>
 <div class="player">
   
-    {{#each quote}}
-        <li>
+    {{#each quote}} 
         <p>{{{this.url}}}</p>
-        </li>
     {{/each}}
   
  {{!--  <iframe width="100%" height="166" scrolling="no" frameborder="no"
@@ -113,3 +95,23 @@
 </iframe> --}}
 </div>
 </div>
+
+
+
+
+
+                </div>
+
+                <footer class="category category-absolute">Designed by
+                                    Dan, Dev
+                                    . Coded by
+                                    Jose, Ethan
+                </footer>
+                
+                                                
+            </div>
+            
+        </div>
+
+       </div>
+       
