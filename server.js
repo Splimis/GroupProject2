@@ -9,11 +9,11 @@ var cookieParser = require('cookie-parser');
 var expressValidator = require('express-validator');
 var flash = require('connect-flash');
 var session = require('express-session');
-var LocalStrategy = require('passport-local'),Strategy;
-var mongo = require('mongodb');
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/loginapp');
-var db = mongoose.connection;
+// var LocalStrategy = require('passport-local'),Strategy;
+// var mongo = require('mongodb');
+// var mongoose = require('mongoose');
+// mongoose.connect('mongodb://localhost/loginapp');
+// var db = mongoose.connection;
 
 var app = express();
 var port = process.env.PORT || 3000;
