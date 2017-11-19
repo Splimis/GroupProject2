@@ -12,10 +12,16 @@ var session = require('express-session');
 var LocalStrategy = require('passport-local').Strategy;
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/loginapp');
+
+var databaseURI = 'mongodb://localhost/loginapp';
+
+if (process.env.MONGODB_URI) {
+	mongoose.connect(process.env.MONGODB_URI);
+	} else {
+	mongoose.connect(databaseURI);
+}
+
 var db = mongoose.connection;
-
-
 
 var app = express();
 var port = process.env.PORT || 3000;
