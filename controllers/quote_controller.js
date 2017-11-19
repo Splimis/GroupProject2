@@ -2,16 +2,16 @@ var express = require('express');
 var router = express.Router();
 var quotations = require('../models/quotations.js');
 
-// router.get('/', function(req, res) {
-//   quotations.selectAll(function(data) {
-//     var hbsObject = {
-//       quote: data
-//     };
-//     // console.log(hbsObject);
-//     res.render('index', hbsObject);
-//     // console.log(res);
-//   });
-// });
+router.get('/quotes', function(req, res) {
+  quotations.selectAll(function(data) {
+    var hbsObject = {
+      quote: data
+    };
+    // console.log(hbsObject);
+    res.render('quotes', hbsObject);
+    // console.log(res);
+  });
+});
 
 router.get('/', function(req, res) {
   quotations.selectRand(function(data) {
@@ -60,15 +60,6 @@ router.get('/beth', function(req,res) {
   });
 });
 
-router.get('/admin', function(req,res) {
-  quotations.selectBeth(function(data) {
-    var hbsObject = {
-      quote: data
-    };
-     res.render('admin', hbsObject);
-  });
-});
-
 router.post('/', function(req, res) {
   quotations.insertOne([
     'quotation',
@@ -79,12 +70,9 @@ router.post('/', function(req, res) {
     req.body.CharID,
     req.body.url
   ], function(data) {
-    res.redirect('/admin');
+    res.redirect('/ensure/admin');
   });
 });
-
-// router.put('/quotes/:id', function(req, res) {
-//   var condition = 'id = ' + req.params.id;
 
 //   quote.updateOne({
 //     devoured: true
