@@ -60,28 +60,28 @@ router.get('/beth', function(req,res) {
   });
 });
 
-router.get('/admin', function(req,res) {
-  quotations.selectBeth(function(data) {
-    var hbsObject = {
-      quote: data
-    };
-     res.render('admin', hbsObject);
-  });
-});
+// router.get('/admin', function(req,res) {
+//   quotations.selectBeth(function(data) {
+//     var hbsObject = {
+//       quote: data
+//     };
+//      res.render('admin', hbsObject);
+//   });
+// });
 
-router.post('/', function(req, res) {
-  quotations.insertOne([
-    'quotation',
-    'CharID',
-    'url'
-  ], [
-    req.body.quotation,
-    req.body.CharID,
-    req.body.url
-  ], function(data) {
-    res.redirect('/admin');
-  });
-});
+// router.post('/', function(req, res) {
+//   quotations.insertOne([
+//     'quotation',
+//     'CharID',
+//     'url'
+//   ], [
+//     req.body.quotation,
+//     req.body.CharID,
+//     req.body.url
+//   ], function(data) {
+//     res.redirect('/admin');
+//   });
+// });
 
 //   quote.updateOne({
 //     devoured: true

@@ -82,7 +82,7 @@ app.set('view engine', 'handlebars');
 
 var routes = require('./controllers/quote_controller.js');
 
-var authRoutes = require('./authRoutes/admin');
+var authRoutes = require('./authRoutes/ensure');
 var users = require('./authRoutes/users');
 
 
@@ -91,7 +91,9 @@ app.use('/', routes);
 
 //Mongo Routes
 app.use('/login', authRoutes);
+app.use('/ensure', authRoutes);
 app.use('/users', users);
+
 
 app.listen(port, function() {
   console.log("App listening on port: " + port);

@@ -78,7 +78,7 @@ passport.deserializeUser(function(id, done) {
 });
 
 router.post('/login',
-	passport.authenticate('local', {successRedirect: '/admin', failureRedirect:'/users/login', failureFlash: true}),
+	passport.authenticate('local', {successRedirect: '/ensure/admin', failureRedirect:'/', failureFlash: true}),
 	function(req, res) {
 		res.redirect('/');
 
@@ -89,7 +89,5 @@ router.get('/logout', function(req, res) {
 	req.flash('success_msg', 'You are logged out');
 	res.redirect('/');
 });
-
-
 
 module.exports = router;
