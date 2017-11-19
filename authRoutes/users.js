@@ -78,7 +78,7 @@ passport.deserializeUser(function(id, done) {
 });
 
 router.post('/login',
-	passport.authenticate('local', {successRedirect: '/ensure/admin', failureRedirect:'/', failureFlash: true}),
+	passport.authenticate('local', {successRedirect: '/ensure/admin', failureRedirect:'/users/login', failureFlash: true}),
 	function(req, res) {
 		res.redirect('/');
 
