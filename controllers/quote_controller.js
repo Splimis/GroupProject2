@@ -83,6 +83,13 @@ router.post('/', function(req, res) {
   });
 });
 
+// router.get('users/login', function(req, res) {
+//   res.render('login');
+
+// });
+
+
+
 // router.put('/quotes/:id', function(req, res) {
 //   var condition = 'id = ' + req.params.id;
 

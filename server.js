@@ -9,34 +9,89 @@ var cookieParser = require('cookie-parser');
 var expressValidator = require('express-validator');
 var flash = require('connect-flash');
 var session = require('express-session');
-// var LocalStrategy = require('passport-local'),Strategy;
-// var mongo = require('mongodb');
-// var mongoose = require('mongoose');
-// mongoose.connect('mongodb://localhost/loginapp');
-// var db = mongoose.connection;
+var LocalStrategy = require('passport-local').Strategy;
+var mongo = require('mongodb');
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/loginapp');
+var db = mongoose.connection;
+
+
 
 var app = express();
 var port = process.env.PORT || 3000;
 
+
+// BodParser Middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.text());
 app.use(bodyParser.json({type:'application/vnd.api+json'}));
+app.use(cookieParser());
 
 // Serve static content for the app from the 'public' directory
 app.use(express.static(process.cwd() + '/public'));
+
+// Express Session
+app.use(session({
+	secret: 'secret',
+	saveUninitialized: true,
+	resave: true
+}));
+
+// Passport Init
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Express Validator
+app.use(expressValidator({
+	errorFormatter: function(param, msg, value) {
+		var namespace = param.split('.'),
+		root = namespace.shift(),
+		formParam = root;
+
+	while(namespace.length) {
+		formParam += '[' + namespace.shift() + ']';
+	}
+	return {
+		param : formParam,
+		msg   : msg,
+		value : value
+		};	
+	}
+}));
+
+// Connect Flash Middleware
+app.use(flash());
+
+//Global Vars
+app.use(function(req, res, next) {
+	res.locals.success_msg = req.flash('success_msg');
+	res.locals.error_msg = req.flash('error_msg');
+	res.locals.error = req.flash('error');
+	next();
+});
+
+
 
 // Override with POST having ?_method=DELETE
 app.use(methodOverride('_method'));
 
 // Set Handlebars as the view engine
-
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
 var routes = require('./controllers/quote_controller.js');
 
+var authRoutes = require('./authRoutes/admin');
+var users = require('./authRoutes/users');
+
+
+//MySQL Routes
 app.use('/', routes);
+
+//Mongo Routes
+app.use('/login', authRoutes);
+app.use('/users', users);
 
 app.listen(port, function() {
   console.log("App listening on port: " + port);
