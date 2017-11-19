@@ -60,15 +60,6 @@ router.get('/beth', function(req,res) {
   });
 });
 
-router.get('/admin', function(req,res) {
-  quotations.selectBeth(function(data) {
-    var hbsObject = {
-      quote: data
-    };
-     res.render('admin', hbsObject);
-  });
-});
-
 router.post('/', function(req, res) {
   quotations.insertOne([
     'quotation',
@@ -79,12 +70,9 @@ router.post('/', function(req, res) {
     req.body.CharID,
     req.body.url
   ], function(data) {
-    res.redirect('/admin');
+    res.redirect('/ensure/admin');
   });
 });
-
-// router.put('/quotes/:id', function(req, res) {
-//   var condition = 'id = ' + req.params.id;
 
 //   quote.updateOne({
 //     devoured: true
